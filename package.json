@@ -1,0 +1,24 @@
+{
+  "name": "nano-log",
+  "version": "1.0.0",
+  "description": "logger utility inspired by http://github.com/quirkey/node-logger",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baontp/nano-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "log",
+    "utility"
+  ],
+  "author": "baontp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baontp/nano-logger/issues"
+  },
+  "homepage": "https://github.com/baontp/nano-logger#readme"
+}
