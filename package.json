@@ -1,6 +1,6 @@
 {
   "name": "nano-log",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "logger utility inspired by http://github.com/quirkey/node-logger",
   "main": "logger.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/baontp/nano-logger/issues"
   },
-  "homepage": "https://github.com/baontp/nano-logger#readme"
+  "homepage": "https://github.com/baontp/nano-logger#readme",
+  "dependencies": {
+    "dateformat": "^2.0.0"
+  }
 }

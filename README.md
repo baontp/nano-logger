@@ -39,6 +39,11 @@ Any of the logging methods take n arguments, which are each joined by ' ' (simil
     logger.warn(username, 'already logged in server');
 ```
 
+set prefix in log
+```javascript
+    logger.prefix = 'prefix 1';
+```
+
 ### Customization:
 
 You can completely customize the look of the log by overriding the `format()` method on a logger.

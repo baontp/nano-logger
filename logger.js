@@ -14,15 +14,15 @@ let makeArray = function (nonarray) {
 // if `log_file_path` is null, log to STDOUT.
 class Logger {
     constructor(tag) {
-        this._tag = tag.toUpperCase() || '';
+        this._tag = !!tag ? tag.toUpperCase() : '';
         this._prefix = '';
     }
 
     set prefix(prefix) {
-        this._prefix = prefix;
+        this._prefix = !!prefix ? prefix.toUpperCase() : '';
     }
 
-    write(text) {
+    static write(text) {
         if (Logger._stream) {
             Logger._stream.write(text + '\r\n');
         } else {
@@ -32,7 +32,7 @@ class Logger {
 
     // The default log formatting function. The default format looks something like:
     //
-    //    [2017-03-30 15:01:00]	[LEVEL]	[TAG]	 message
+    //    [2017-03-30 15:01:00]	[LEVEL]	[TAG] [PREFIX]	 message
     //
     format(level, date, message) {
         if (this._prefix.length > 0) {
@@ -64,7 +64,7 @@ class Logger {
         if (log_index === -1) {
             log_index = LOGGER_LEVEL;
         } else {
-            // the first arguement actually was the log level
+            // the first argument actually was the log level
             args.shift();
         }
         if (log_index <= LOGGER_LEVEL) {
@@ -77,7 +77,7 @@ class Logger {
                 }
             });
             message = this.format(Logger.levels[log_index], new Date(), message);
-            this.write(message);
+            Logger.write(message);
             return message;
         }
         return false;
@@ -109,7 +109,7 @@ let _initLogFile = function () {
             Logger._stream.close();
         }
         Logger._stream = fs.createWriteStream(logFilePath, {flags: 'a', encoding: 'utf8', mode: 0o666});
-        Logger._stream.write("\n");
+        Logger.write("\n");
     }
 };
 
