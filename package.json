@@ -1,6 +1,6 @@
 {
   "name": "nano-log",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "logger utility inspired by http://github.com/quirkey/node-logger",
   "main": "logger.js",
   "scripts": {
